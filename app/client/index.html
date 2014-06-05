@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PAMM</title>
+
+    <link rel="stylesheet" type="text/css" href="css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="css/pamm.css">
+
+    <script src="js/knockout-3.1.0.js"></script>
+    <script src="js/pamm-live.js"></script>
+  </head>
+
+  <body>
+      <ul id="navbar">
+        <li data-bind="attr: { active: dom.view.isActive('News') }">News</li>
+        <li data-bind="attr: { active: dom.view.isActive('Installed Mods') }">Installed Mods</li>
+        <li data-bind="attr: { active: dom.view.isActive('Available Mods') }">Available Mods</li>
+        <li data-bind="attr: { active: dom.view.isActive('Settings') }">Settings</li>
+      </ul>
+
+      <div class="view" id="newsView" data-bind="visible: dom.view.isActive('News')">
+
+      </div>
+
+      <div class="view"id="installedModsView" data-bind="visible: dom.view.isActive('Installed Mods')">
+        Installed Mods View
+      </div>
+
+      <div class="view" id="AvailableModsView" data-bind="visible: dom.view.isActive('Available Mods')">
+        Available Mods View
+      </div>
+
+      <div class="view" id="settingsView" data-bind="visible: dom.view.isActive('Settings')">
+
+        <button data-bind="click: function(){ settings.set(); }">Save Settings</button>
+
+        <label>PA Location</label> <input type="text" name="paLocation"/>
+        <br> <i>EX: C:\Games\Uber Entertainment\Planetary Annihilation Launcher\Planetary Annihilation\stable</i>
+
+        <br><br>
+
+        <label>PA Mods Location</lable> <input type="text" name="paModsLocations"/>
+        <br> <i>Not the specific "client_mods" or "server_mods" folder. The location of the folders</i>
+        <br> <i>EX: C:\Users\someonewhoisnobody\AppData\Local\Uber Entertainment\Planetary Annihilation</i>
+      </div>
+  </body>
+</html>

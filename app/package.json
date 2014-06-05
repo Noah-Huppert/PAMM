@@ -1,0 +1,6 @@
+{
+  "name": "pamm",
+  "author": "someonewhoisnobody",
+  "version": "0.0.1",
+  "main": "server/main.js"
+}
